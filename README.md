@@ -6,12 +6,8 @@
 - [x] **Set 2** – Registration & Login routes
 - [x] **Set 3** – Products table & browsing
 - [x] **Set 4** – Cart + Checkout logic
-<<<<<<< HEAD
-- [ ] **Set 5** – Order history & data cleanup
-=======
 - [x] **Set 5** – Order history & data cleanup
->>>>>>> 50df86f667941bd7b3270c72179f0473cd1417f9
-- [ ] **Set 6** – HTML + CSS polish
+- [x] **Set 6** – HTML + CSS polish
 - [ ] **Set 7** – Final testing, demo prep
 
 ##  Features to Complete
