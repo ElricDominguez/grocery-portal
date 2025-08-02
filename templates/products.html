@@ -1,34 +1,31 @@
 {% extends "base.html" %}
-
-{% block title %}Products{% endblock %}
-
 {% block content %}
-<h2> Available Products</h2>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Price ($)</th>
-      <th>In Stock</th>
-    </tr>
-  </thead>
-  <tbody>
-  {% for p in products %}
-  <tr>
-    <td>{{ p.name }}</td>
-    <td>{{ p.description }}</td>
-    <td>{{ p.price }}</td>
-    <td>{{ p.stock }}</td>
-    <td>
-      <form method="POST" action="/add_to_cart">
-        <input type="hidden" name="product_id" value="{{ p.id }}">
-        <button type="submit" class="btn btn-sm btn-success">Add to Cart</button>
-      </form>
-    </td>
-  </tr>
-  {% endfor %}
-</tbody>
-
+<h2 class="mb-4">Available Products</h2>
+<table class="table table-hover align-middle">
+    <thead class="table-light">
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price ($)</th>
+            <th>In Stock</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for p in products %}
+        <tr>
+            <td>{{ p.name }}</td>
+            <td>{{ p.description }}</td>
+            <td>${{ "%.2f"|format(p.price) }}</td>
+            <td>{{ p.stock }}</td>
+            <td>
+                <form action="/add_to_cart" method="post" class="d-inline">
+                    <input type="hidden" name="product_id" value="{{ p.id }}">
+                    <button type="submit" class="btn btn-success btn-sm">Add to Cart</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
 </table>
 {% endblock %}

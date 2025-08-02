@@ -1,4 +1,5 @@
 # User Guide
+
 ## 1. Register for an Account
 1. Visit the **Register** page.
 2. Fill in:
@@ -9,10 +10,9 @@
 4. You’ll be redirected to the login page.
 
 ## 2. Log In
-1. Go to the **Login** page. (you should be taken automatically upon registering)
+1. Go to the **Login** page (you should be taken there automatically after registering).
 2. Enter your registered email and password.
 3. After successful login, you’ll be redirected to the **Products** page.
-
 
 ## 3. Browse Products
 1. On the **Products** page, you’ll see a list of all available grocery items.
@@ -31,7 +31,6 @@
    - Total and tax calculated
 3. Click **Checkout** to proceed.
 
-
 ## 5. Checkout and Pseudo Payment
 1. When ready, click **Checkout** in the cart.
 2. You will be redirected to the **Payment** page.
@@ -46,7 +45,6 @@
    - Total
    - List of purchased items and their prices
 
-
 ## 7. Account Info
 1. Click **Account** in the navigation bar.
 2. View your:
@@ -57,9 +55,15 @@
 ## 8. Log Out
 - Click **Logout** in the top-right corner of the navigation bar.
 
+---
 
-##  MySQL Set Up
+## MySQL Setup
 
+Go to `db_config.py` and change the password (and any other connection settings) under the `# connection` comment if needed.
+
+Then run the following SQL commands:
+
+```sql
 CREATE DATABASE grocery_portal;
 USE grocery_portal;
 
@@ -69,8 +73,6 @@ CREATE TABLE users (
     email VARCHAR(100) UNIQUE,
     password VARCHAR(100)
 );
-
-USE grocery_portal;
 
 CREATE TABLE products (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -86,9 +88,6 @@ INSERT INTO products (name, description, price, stock) VALUES
 ('Eggs', 'Dozen large eggs', 2.79, 30),
 ('Apples', 'Fresh red apples (3 lb bag)', 4.50, 20),
 ('Chicken Breast', 'Boneless skinless (1 lb)', 5.99, 10);
-
-
-USE grocery_portal;
 
 CREATE TABLE orders (
     id INT AUTO_INCREMENT PRIMARY KEY,
